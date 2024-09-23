@@ -27,6 +27,10 @@ public class ChatController {
     public ResponseEntity<List<Chat>> getAllChats(){
         return ResponseEntity.ok(chatService.getAll());
     }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Chat> update(@PathVariable Long id,@RequestBody Chat chat){
+        return ResponseEntity.ok(chatService.updateChat(id,chat));
+    }
 
 
 }
