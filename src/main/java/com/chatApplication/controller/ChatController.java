@@ -14,4 +14,6 @@ public class ChatController {
     public List getALlChats(){
         return List.of("Hii","Hello");
     }
+
+
 }
