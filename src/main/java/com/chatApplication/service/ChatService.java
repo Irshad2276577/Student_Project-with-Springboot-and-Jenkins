@@ -4,6 +4,8 @@ import com.chatApplication.Entity.Chat;
 import com.chatApplication.Repository.ChatRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ChatService {
 
@@ -15,5 +17,9 @@ public class ChatService {
 
     public Chat createChat(Chat chat){
         return chatRepository.save(chat);
+    }
+
+    public List<Chat> getAll(){
+        return chatRepository.findAll();
     }
 }
