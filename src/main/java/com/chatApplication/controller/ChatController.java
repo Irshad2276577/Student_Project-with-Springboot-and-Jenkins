@@ -32,5 +32,13 @@ public class ChatController {
         return ResponseEntity.ok(chatService.updateChat(id,chat));
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteById(@PathVariable long id){
+        if(chatService.deleteChat(id)){
+            return ResponseEntity.ok("Chat with id "+id+" deleted successfully");
+        }
+        return ResponseEntity.internalServerError().build();
+    }
+
 
 }

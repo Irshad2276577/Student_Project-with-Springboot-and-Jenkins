@@ -35,4 +35,16 @@ public class ChatService {
             return null;
         }
     }
+
+    public boolean deleteChat(long id){
+        try{
+            chatRepository.deleteById(id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+
+
+
+    }
 }
